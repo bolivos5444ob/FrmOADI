@@ -311,13 +311,19 @@ class BuzonIncidentesMedicosController extends Controller
 
         try {
 
-            // GUARDAR IMAGEN________________________________________________________________
+            // GUARDAR IMAGEN
             $pathImagen = null;
             $pdfPath = null;
 
-
-            //AUMENTAR CORRELATIVO__________________________________________________________
-            $correlativo = Correlativo::find(3);//buzon de incidencias medicas
+            //AUMENTAR CORRELATIVO
+            if ($request->id_tipo_usuario == 1) {
+                $idCorrelativo = 3;
+            }
+            else{
+                $idCorrelativo = 5;
+            }
+            
+            $correlativo = Correlativo::find($idCorrelativo);//buzon de incidencias medicas
             $correlativo->numero_correlativo  += 1;
             
             $numero = str_pad($correlativo->numero_correlativo, 11, '0', STR_PAD_LEFT);

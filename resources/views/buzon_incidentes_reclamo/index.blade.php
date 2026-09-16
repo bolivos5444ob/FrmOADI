@@ -93,7 +93,7 @@
             <label class="font-label-md text-label-md text-on-surface-variant">FECHA</label>
             <div class="relative">
                 <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">calendar_today</span>
-                <input id="fecha" name="fecha"value="{{ now()->format('Y-m-d') }}"  class="w-full pl-[48px] pr-md h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest transition-all" type="date">
+                <input readonly id="fecha" name="fecha"value="{{ now()->format('Y-m-d') }}"  class="w-full pl-[48px] pr-md h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest transition-all" type="date">
             </div>
         </div> 
 
@@ -101,7 +101,7 @@
             <label class="font-label-md text-label-md text-on-surface-variant">HORA</label>
             <div class="relative">
                 <span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">schedule</span>
-                <input id="hora" name="hora" value="{{ now()->format('H:i') }}" class="w-full pl-[48px] pr-md h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest transition-all" type="time">
+                <input readonly id="hora" name="hora" value="{{ now()->format('H:i') }}" class="w-full pl-[48px] pr-md h-12 rounded-lg border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-container-lowest transition-all" type="time">
             </div>
         </div>
     </div>
