@@ -22,4 +22,10 @@ class Servicios extends Model
         'IdEspecialidad'
     ];
 
+
+    // public function buzonIncidentesReclamos()
+    // {
+    //     return $this->hasMany(BuzonIncidentesReclamos::class);
+    // }
+
 }

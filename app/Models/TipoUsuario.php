@@ -21,4 +21,9 @@ class TipoUsuario extends Model
         'descripcion',
     ];
 
+    public function buzonIncidentesReclamos()
+    {
+        return $this->hasMany(BuzonIncidentesReclamos::class);
+    }
+
 }

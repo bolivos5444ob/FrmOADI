@@ -81,13 +81,15 @@
 
             <table class="data-table">
                 <tr>
-                    <th colspan="2">I. IDENTIFICACIÓN DEL INTERNO</th>
+                    <th colspan="4">I. IDENTIFICACIÓN DEL INTERNO</th>
                 </tr>
 
                 <tr>
                     <td width="30%"><strong>Fecha:</strong></td>
-                    <td>{{ date('d/m/Y', strtotime($buzon->fecha)) }}}</td>
+                    <td>{{ date('d/m/Y', strtotime($buzon->fecha)) }}</td>
+                </tr>
 
+                <tr>
                     <td width="30%"><strong>Hora:</strong></td>
                     <td>{{ $buzon->hora }}</td>
                 </tr>
@@ -95,30 +97,46 @@
 
                 <tr>
                     <td width="30%"><strong>Nombres y apellidos:</strong></td>
-                    <td colspan="2">{{ $buzon->nombres_razon_social }}</td>
+                    <td colspan="4">{{ $buzon->nombres_apellidos }}</td>
                 </tr>
 
-                 <tr>
-                    <td width="30%"><strong>TipoDocumento:</strong></td>
-                    <td>{{ $buzon->email }}</td>
+                
 
-                     <tr>
-                    <td width="30%"><strong>N° documento:</strong></td>
+                <tr>
+                    <td width="30%"><strong>Tipo Usuario:</strong></td>
+                    <td>{{ $buzon->tipoUsuario->descripcion }}</td>
+                </tr>
+                <tr>
+                    
+                    <td width="30%"><strong>N° Documento:</strong></td>
                     <td>{{ $buzon->numero_documento }}</td>
                 </tr>
 
-               
-                <tr>
-                    <td width="30%"><strong>Email:</strong></td>
-                    <td>{{ $buzon->email }}</td>
 
-                    <td width="30%"><strong>N° telefóno:</strong></td>
-                    <td>{{ $buzon->telefono }}</td>
+               <tr>
+                    <td width="30%"><strong>Servicio de Rotación:</strong></td>
+                    <td>{{ $buzon->servicios()->Nombre }}</td>
+                </tr>
+                <tr>
+                    
+                    <td width="30%"><strong>Universidad:</strong></td>
+                    <td>{{ $buzon->universidad->descripcion }}</td>
                 </tr>
 
                 <tr>
-                    <td width="30%"><strong>Domicilio:</strong></td>
-                    <td>{{ $buzon->domicilio }}</td>
+                    <td width="30%"><strong>Teléfono:</strong></td>
+                    <td>{{ $buzon->telefono }}</td>
+                </tr>
+                <tr>
+                    
+                    <td width="30%"><strong>Email:</strong></td>
+                    <td>{{ $buzon->email }}</td>
+                </tr>
+
+                <tr>
+                    
+                    <td width="30%"><strong>Tipo de Reporte:</strong></td>
+                    <td>{{ $buzon->tipoReporte->descripcion }}</td>
                 </tr>
 
             </table>
@@ -131,18 +149,18 @@
                 </tr>
                 <tr>
                     <td>
-                        <p>{{ $buzon->descripcion }}</p>
+                        <p>{{ $buzon->detalle_reporte }}</p>
                     </td>
                 </tr>
             </table>
 
             <table class="data-table">
                 <tr>
-                    <th colspan="2">IV. AUTORIZO NOTIFICACIÓN DEL RESULTADO DEL RECLAMO AL EMAIL</th>
+                    <th colspan="2">IV. AUTORIZO NOTIFICACIÓN DEL RESULTADO AL REPORTE REALIZADO</th>
                 </tr>
                 <tr>
                     <td width="30%"><strong>Autorizo:</strong></td>
-                    <td>{{ $buzon->notificacion == 1 ? 'SI' : 'NO' }}</td>
+                    <td>{{ $buzon->not_reclamo == 1 ? 'SI' : 'NO' }}</td>
                 </tr>
             </table>
 

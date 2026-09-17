@@ -42,4 +42,27 @@ class BuzonIncidentesReclamos extends Model
         //'fecha' => 'date',
         //'fecha_creacion' => 'datetime',
     ];
+
+
+    // Relaciones
+    public function servicios()
+    {
+        // Forzamos a buscar en el modelo Servicios usando su propia conexión (por defecto)
+        return Servicios::where('IdServicio', $this->id_servicio)->first();
+    }
+
+    public function tipoReporte()
+    {
+        return $this->belongsTo(TipoReporte::class, 'id_reporte', 'id_reporte');
+    }
+
+    public function tipoUsuario()
+    {
+        return $this->belongsTo(TipoUsuario::class, 'id_tipo_usuario', 'id_tipo_usuario');
+    }
+
+    public function universidad()
+    {
+        return $this->belongsTo(Universidad::class, 'id_universidad', 'id_universidad');
+    }
 }
